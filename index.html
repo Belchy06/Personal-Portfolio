@@ -14,7 +14,7 @@
 	
 	
 <body>
-	<nav class="navbar fixed-top toggle-height navbar-expand-lg navbar-dark" id="global-nav" style="padding 0px;">
+	<nav class="navbar fixed-top toggle-height navbar-expand-md navbar-dark" id="global-nav" style="padding 0px;">
 		<a class="navbar-brand" style="margin-left: 10%" href="#title">William Belcher</a>
 		<button class="navbar-toggler custom-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon custom-toggler"></span>
@@ -43,8 +43,19 @@
 		<div class="header-center">
 			<h1 class="header-title">William Belcher</h1>
 			<h3 class="lead">a student in my final year of high school. Interested in STEM with particular focus on software development and electronic systems</h3>
-		</div>	
+		</div>
+		<div class="titleBottom">
+			<h3 style="color: #ffffff;">Read More</h3>
+			<button class="whitebtn">
+				<a href="#About">
+					<img src="img/chevron-down.png" alt="chevron">
+				</a>
+			</button>
+		</div>
+		
 	</div>
+	
+	
 	
 	<div class="container-fluid" id="About">
 		<div class="row" style="padding-bottom: 50px;">
@@ -144,7 +155,7 @@
 			</div>
 		</div>
 		
-		<form action="send.php" method="get">
+		<form action="send.php" method="get" id="contact-form">
 			<div class="form-group row offset-2">
 				<label for="name" class="col-2 col-form-label" style="color:#ffffff;">Name</label>
 				<div class="col-7">
@@ -191,7 +202,7 @@
 	<script>
 $(document).ready(function(){
   // Add smooth scrolling to all links in navbar + footer link
-  $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+  $(".navbar a, footer a[href='#myPage'], a").on('click', function(event) {
 
   // Make sure this.hash has a value before overriding default behavior
   if (this.hash !== "") {
