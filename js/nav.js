@@ -3,46 +3,39 @@
 $(window).resize(navScroll);
 $(document).ready(navScroll);
 $(window).scroll(navScroll);
-var toggle = 0;
 
 var url = window.location.pathname;
-var filename = (url.substring(0, url.lastIndexOf('/')));
-filename = filename.substring(filename.lastIndexOf('/') + 1);
+var typed = $(".typed");
 
 function navScroll(){
-    if($(window).width() >= 992) {
+    if($(window).width() >= 991.98) {
+
         var scrollTop = 0;
           scrollTop = $(window).scrollTop();
 
           if (scrollTop >= 100) 
 		  {
-			  $('#global-nav').css({"padding":"0px"})
-			  $('#global-nav').addClass('scrolled-nav');
 			  $("nav a").css('color', 'black')
+			  $('#global-nav').removeClass('transparent')
 
 		  } 
 		else if (scrollTop < 100) 
 		{
-            $('#global-nav').removeClass('scrolled-nav');
 			$("nav a").css('color', 'white')
+			$('#global-nav').addClass('transparent')
 		}
     }
     else {
-        $('#global-nav').css({
-            "padding":"21px",
-            "padding-top":"8px",
-            "padding-bottom":"8px"
-        })
 		$("nav a").css('color', 'black')
+		$('#global-nav').removeClass('transparent')
     }
 }
 
-$(".navbar-toggler").click(function() {
-    toggle++;
-    if(toggle % 2 == 1) {
-        $('#global-nav').removeClass('toggle-height');
-    }
-    else {
-        $('#global-nav').addClass('toggle-height');
-    }
+
+$(function() {
+	if($(window).width() >= 991.98) {
+		typed.typed({strings: ["'M A DESIGNER.", "'M A DEVELOPER.", "'M A FREELANCER.", " AM WILLIAM BELCHER."], typeSpeed: 100, loop: false,});
+	} else {
+		typed.typed({strings: [" AM WILLIAM BELCHER."], typeSpeed: 100, loop: false,});
+	}
 });
